@@ -1,0 +1,148 @@
+:root { 
+  /* Indian B2B Trust Colors - Enhanced Palette */
+  --primary: #ff5722; /* Deep Saffron Orange */
+  --primary-light: #ff7043;
+  --primary-dark: #d84315;
+  --secondary: #1976d2; /* Trust Blue */
+  --secondary-light: #42a5f5;
+  --secondary-dark: #0d47a1;
+  --accent: #ff6f00; /* Amber Orange */
+  --accent-light: #ffa040;
+  --background: #ffffff;
+  --background-secondary: #fafafa;
+  --foreground: #212121;
+  --foreground-light: #424242;
+  --muted: #616161;
+  --card: #ffffff;
+  --card-hover: #f5f5f5;
+  --border: #e0e0e0;
+  --border-light: #f0f0f0;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --success: #2e7d32;
+  --success-light: #4caf50;
+  --warning: #f57c00;
+  --indian-blue: #0d47a1;
+  --indian-gold: #ff6f00;
+  --indian-saffron: #ff5722;
+  --indian-green: #2e7d32;
+  --trust-blue: #1565c0;
+  
+  /* Enhanced gradients with more vibrancy */
+  --hero-gradient: linear-gradient(135deg, #ff5722 0%, #ff6f00 50%, #ff8f00 100%);
+  --secondary-gradient: linear-gradient(135deg, #0091ea 0%, #1976d2 50%, #1565c0 100%);
+  --accent-gradient: linear-gradient(135deg, #ff6f00 0%, #f57c00 50%, #ef6c00 100%);
+  --gold-gradient: linear-gradient(135deg, #ffc107 0%, #ff8f00 50%, #ff6f00 100%);
+  --saffron-gradient: linear-gradient(135deg, #ff9800 0%, #ff5722 50%, #d84315 100%);
+  --green-gradient: linear-gradient(135deg, #43a047 0%, #2e7d32 50%, #1b5e20 100%);
+  --rainbow-gradient: linear-gradient(90deg, #ff5722 0%, #ff6f00 20%, #ffc107 40%, #4caf50 60%, #1976d2 80%, #7b1fa2 100%);
+  
+  /* Mesh gradients with Indian colors - Enhanced */
+  --mesh-gradient-1: radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.3) 0%, transparent 50%);
+  --mesh-gradient-2: radial-gradient(circle at 80% 20%, rgba(255, 64, 129, 0.2) 0%, transparent 50%);
+  --mesh-gradient-3: radial-gradient(circle at 40% 40%, rgba(0, 191, 165, 0.2) 0%, transparent 50%);
+  --mesh-gradient-4: radial-gradient(circle at 90% 80%, rgba(255, 193, 7, 0.2) 0%, transparent 50%);
+  
+  /* Enhanced shadow system */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
+  --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.20);
+  --shadow-glow: 0 0 40px rgba(255, 87, 34, 0.2);
+  --shadow-glow-blue: 0 0 40px rgba(25, 118, 210, 0.2);
+  
+  /* Glassmorphism effects */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  --glass-blur: 10px;
+  
+  /* Animation timings */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-spring: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+html, body { 
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button { 
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, textarea { 
+  padding: 8px 12px;
+  font-family: inherit;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  color: var(--foreground);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-top: 0;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+h1 { 
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); 
+  font-weight: 900; 
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+h2 { 
+  font-size: clamp(2rem, 4vw + 0.5rem, 3rem); 
+  font-weight: 800; 
+  line-height: 1.15;
+}
+h3 { 
+  font-size: clamp(1.5rem, 3vw + 0.25rem, 2rem); 
+  font-weight: 700; 
+}
+h4 { 
+  font-size: clamp(1.25rem, 2vw + 0.25rem, 1.5rem); 
+  font-weight: 600; 
+}
+h5 { 
+  font-size: clamp(1.125rem, 1.5vw + 0.25rem, 1.25rem); 
+  font-weight: 600; 
+}
+h6 { 
+  font-size: clamp(1rem, 1vw + 0.25rem, 1.125rem); 
+  font-weight: 600; 
+}
+
+strong { font-weight: 600; }
+b { font-weight: 700; }
+

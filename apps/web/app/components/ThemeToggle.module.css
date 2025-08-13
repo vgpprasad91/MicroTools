@@ -1,0 +1,63 @@
+.themeToggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.toggleTrack {
+  width: 60px;
+  height: 30px;
+  background: var(--border);
+  border-radius: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 2px solid var(--border);
+}
+
+.toggleTrack.dark {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-color: var(--primary);
+}
+
+.toggleThumb {
+  width: 26px;
+  height: 26px;
+  background: var(--card);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .toggleThumb {
+  transform: translateX(30px);
+  background: white;
+}
+
+.icon {
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.themeToggle:hover .toggleTrack {
+  transform: scale(1.05);
+}
+
+.themeToggle:active .toggleTrack {
+  transform: scale(0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggleTrack,
+  .toggleThumb,
+  .icon {
+    transition: none;
+  }
+}

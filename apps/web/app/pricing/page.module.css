@@ -1,0 +1,315 @@
+.pricingHero {
+  text-align: center;
+  padding: 60px 20px;
+  margin-bottom: 60px;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0 0 16px 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: var(--muted);
+  margin: 0 0 32px 0;
+}
+
+.pricingToggle {
+  display: inline-flex;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 60px;
+}
+
+.toggleButton {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--foreground);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggleButton.active {
+  background: var(--primary);
+  color: white;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricingCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pricingCard.featured {
+  border-color: var(--primary);
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.planName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.planDescription {
+  color: var(--muted);
+  margin: 0 0 24px 0;
+}
+
+.priceWrapper {
+  margin-bottom: 32px;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.currency {
+  font-size: 1.5rem;
+  color: var(--muted);
+}
+
+.period {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: var(--muted);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.checkIcon {
+  width: 24px;
+  height: 24px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ctaButton {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--card);
+  border: 2px solid var(--border);
+  color: var(--foreground);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.ctaButton.primary {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.ctaButton.primary:hover {
+  background: var(--primary-dark);
+}
+
+.comparisonSection {
+  margin-top: 80px;
+  padding: 60px 20px;
+  background: var(--card);
+  border-radius: 24px;
+  border: 1px solid var(--border);
+}
+
+.comparisonTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 48px;
+}
+
+.comparisonTable {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.comparisonTable th,
+.comparisonTable td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.comparisonTable th {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.comparisonTable td {
+  font-weight: 500;
+}
+
+.checkMark {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+.crossMark {
+  color: var(--muted);
+  opacity: 0.5;
+  font-size: 1.5rem;
+}
+
+.faqSection {
+  margin-top: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paymentSection {
+  margin-top: 80px;
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--card);
+  border-radius: 24px;
+  border: 1px solid var(--border);
+}
+
+.paymentTitle {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.paymentSubtitle {
+  color: var(--muted);
+  margin-bottom: 48px;
+}
+
+.paymentMethods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+
+.paymentMethod {
+  text-align: center;
+}
+
+.paymentIcon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.paymentMethod h3 {
+  font-size: 1.25rem;
+  margin: 0 0 8px 0;
+}
+
+.paymentMethod p {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.gstNote {
+  background: var(--background);
+  padding: 16px 24px;
+  border-radius: 12px;
+  display: inline-block;
+  color: var(--foreground);
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pricingCard.featured {
+    transform: none;
+  }
+  
+  .comparisonTable {
+    font-size: 0.875rem;
+  }
+  
+  .comparisonTable th,
+  .comparisonTable td {
+    padding: 12px 8px;
+  }
+}

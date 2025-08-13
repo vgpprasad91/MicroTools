@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String   @id @default(cuid())
+  email             String?  @unique
+  phone             String?  @unique
+  name              String
+  password          String?
+  isEmailVerified   Boolean  @default(false)
+  isPhoneVerified   Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  // Subscription fields
+  subscriptionId    String?
+  subscriptionStatus String? // active, inactive, cancelled
+  planId            String?
+  subscriptionEndDate DateTime?
+  
+  // Razorpay customer ID
+  razorpayCustomerId String?
+  
+  payments          Payment[]
+  subscriptions     Subscription[]
+}
+
+model Subscription {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+  
+  // Razorpay subscription details
+  razorpaySubscriptionId String @unique
+  planId            String
+  planName          String
+  amount            Int      // in paise
+  currency          String   @default("INR")
+  interval          String   // monthly, yearly
+  status            String   // active, pending, cancelled, expired
+  
+  currentPeriodStart DateTime
+  currentPeriodEnd   DateTime
+  cancelledAt        DateTime?
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  payments          Payment[]
+}
+
+model Payment {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+  
+  subscriptionId    String?
+  subscription      Subscription? @relation(fields: [subscriptionId], references: [id])
+  
+  // Razorpay payment details
+  razorpayOrderId   String   @unique
+  razorpayPaymentId String?  @unique
+  razorpaySignature String?
+  
+  amount            Int      // in paise
+  currency          String   @default("INR")
+  status            String   // created, paid, failed
+  method            String?  // card, upi, netbanking, wallet
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model OTP {
+  id        String   @id @default(cuid())
+  phone     String
+  otp       String
+  expiresAt DateTime
+  verified  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  
+  @@index([phone])
+}
