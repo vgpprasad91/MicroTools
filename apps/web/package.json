@@ -18,7 +18,7 @@
     "jspdf": "^3.0.1",
     "lucide-react": "^0.539.0",
     "next": "^14.2.5",
-    "next-auth": "^4.24.11",
+    "next-auth": "^4.24.12",
     "razorpay": "^2.9.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
